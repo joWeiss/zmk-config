@@ -16,39 +16,27 @@
 
 
 / {
-    behaviors {
-        ht: hold_tap {
-            label = "hold_tap";
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <150>;
-            global-quick-tap;
-            bindings = <&kp>, <&kp>;
-        };
-    };
-
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        FUNC {
-            if-layers = <EXT SYM>;
-            then-layer = <FUNC>;
-        };
-    };
-
-    combos {
-        compatible = "zmk,combos";
-
-        BLUETOOTH {
-            bindings = <&mo BLE>;
-            key-positions = <32 33 30 31>;
-        };
-    };
+//     conditional_layers {
+//         compatible = "zmk,conditional-layers";
+//         FUNC {
+//             if-layers = <EXT SYM>;
+//             then-layer = <FUNC>;
+//         };
+//     };
+// 
+//     combos {
+//         compatible = "zmk,combos";
+// 
+//         BLUETOOTH {
+//             bindings = <&mo BLE>;
+//             key-positions = <32 33 30 31>;
+//             layers = <BASE>;
+//         };
+//     };
 
     keymap {
         compatible = "zmk,keymap";
-        BASE {
+        BASE_LAYER {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  F       │  P       │  B       │   │  J       │  L       │  U       │  Y       │  '       │
@@ -63,98 +51,97 @@
                                             &mo EXT  &kp LEFT_SHIFT   &mt LEFT_GUI SPACE &mo SYM
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
-            label = "BASE";
         };
 
-        EXT {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮           ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ ESC      │  BK      │  FIND    │  Forward │   INSERT │           │ PAGE UP  │ HOME     │ UP       │ END      │          │
-            &kp ESC   &kp K_BACK  &kp K_FIND &kp K_FORWARD &kp INSERT          &kp PG_UP  &kp HOME  &kp UP      &kp END    &trans
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤           ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  ALT     │  SUPER   │  SHIFT   │  CTRL    │ ALT Gr   │           │ PAGE DOWN│ LEFT     │ DOWN     │ RIGHT    │  DEL     │
-    &sk LEFT_ALT &sk LEFT_META &sk LEFT_SHIFT &sk LEFT_CONTROL &sk RIGHT_ALT  &kp PG_DN  &kp LEFT    &kp DOWN  &kp RIGHT   &kp DEL
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤           ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ CTRL-Z   │  CTRL-X  │  CTRL-C  │  META    │  CTRL-V  │           │ ENTER    │ BACKSPACE│ TAB      │ MENU     │ PRINTSCRN│
-          &kp LC(Z)   &kp LC(X)  &kp LC(C) &kp LEFT_META &kp LC(V)             &kp ENTER  &kp BSPC   &kp TAB  &kp K_MENU  &kp PRINTSCREEN
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤           ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &none     &trans                &kp ENTER   &trans
-        //                                 ╰──────────┴──────────╯           ╰──────────┴──────────╯
-            >;
-            label = "EXT";
-        };
+//         EXT {
+//             bindings = <
+//         //╭──────────┬──────────┬──────────┬──────────┬──────────╮           ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+//         //│ ESC      │  BK      │  FIND    │  Forward │   INSERT │           │ PAGE UP  │ HOME     │ UP       │ END      │          │
+//             &kp ESC   &kp K_BACK  &kp K_FIND &kp K_FORWARD &kp INSERT          &kp PG_UP  &kp HOME  &kp UP      &kp END    &trans
+//         //├──────────┼──────────┼──────────┼──────────┼──────────┤           ├──────────┼──────────┼──────────┼──────────┼──────────┤
+//         //│  ALT     │  SUPER   │  SHIFT   │  CTRL    │ ALT Gr   │           │ PAGE DOWN│ LEFT     │ DOWN     │ RIGHT    │  DEL     │
+//     &sk LEFT_ALT &sk LEFT_META &sk LEFT_SHIFT &sk LEFT_CONTROL &sk RIGHT_ALT  &kp PG_DN  &kp LEFT    &kp DOWN  &kp RIGHT   &kp DEL
+//         //├──────────┼──────────┼──────────┼──────────┼──────────┤           ├──────────┼──────────┼──────────┼──────────┼──────────┤
+//         //│ CTRL-Z   │  CTRL-X  │  CTRL-C  │  META    │  CTRL-V  │           │ ENTER    │ BACKSPACE│ TAB      │ MENU     │ PRINTSCRN│
+//           &kp LC(Z)   &kp LC(X)  &kp LC(C) &kp LEFT_META &kp LC(V)             &kp ENTER  &kp BSPC   &kp TAB  &kp K_MENU  &kp PRINTSCREEN
+//         //╰──────────┴──────────┴──────────┼──────────┼──────────┤           ├──────────┼──────────┼──────────┴──────────┴──────────╯
+//                                              &none     &trans                &kp ENTER   &trans
+//         //                                 ╰──────────┴──────────╯           ╰──────────┴──────────╯
+//             >;
+//             label = "EXT";
+//         };
 
-        SYM {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  [       │  {       │  }       │          │   │  ^       │  (       │  )       │  ]       │  ~       │
-    &kp EXCL    &kp AT_SIGN       &kp POUND        &kp DOLLAR    &kp PERCENT       &kp EQUAL              &kp GRAVE        &kp COLON      &kp SEMICOLON        &kp PLUS
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  !       │  @       │  #       │  $       │  %       │   │  *       │  -       │  =       │  \       │  `       │
+//         SYM {
+//             bindings = <
+//         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+//         //│          │  [       │  {       │  }       │          │   │  ^       │  (       │  )       │  ]       │  ~       │
+//     &kp EXCL    &kp AT_SIGN       &kp POUND        &kp DOLLAR    &kp PERCENT       &kp EQUAL              &kp GRAVE        &kp COLON      &kp SEMICOLON        &kp PLUS
+//         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+//         //│  !       │  @       │  #       │  $       │  %       │   │  *       │  -       │  =       │  \       │  `       │
 &sk LEFT_ALT  &sk LEFT_META  &sk LEFT_SHIFT  &sk LEFT_CONTROL      &kp CARET    &kp ASTERISK   &kp LEFT_PARENTHESIS   &kp LEFT_BRACE   &kp LEFT_BRACKET       &kp MINUS
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │  &       │  _       │  +       │  │       │          │
-      &trans         &trans   &kp BACKSLASH          &kp PIPE  &kp AMPERSAND       &kp TILDE  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp UNDERSCORE
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-      &trans         &tog NUM                                                                                                             &trans           &none
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-            label = "SYM";
-        };
+//         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+//         //│          │          │          │          │          │   │  &       │  _       │  +       │  │       │          │
+//       &trans         &trans   &kp BACKSLASH          &kp PIPE  &kp AMPERSAND       &kp TILDE  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp UNDERSCORE
+//         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+//       &trans         &tog NUM                                                                                                             &trans           &none
+//         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+//             >;
+//             label = "SYM";
+//         };
 
 
-        FUNC {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  [       │  {       │  }       │          │   │  ^       │  (       │  )       │  ]       │  ~       │
-      &trans          &trans     &trans  &trans  &kp C_BRIGHTNESS_INC    &kp F12  &kp F7      &kp F8     &kp F9  &kp SCROLLLOCK
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  !       │  @       │  #       │  $       │  %       │   │  *       │  -       │  =       │  \       │  `       │
+//         FUNC {
+//             bindings = <
+//         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+//         //│          │  [       │  {       │  }       │          │   │  ^       │  (       │  )       │  ]       │  ~       │
+//       &trans          &trans     &trans  &trans  &kp C_BRIGHTNESS_INC    &kp F12  &kp F7      &kp F8     &kp F9  &kp SCROLLLOCK
+//         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+//         //│  !       │  @       │  #       │  $       │  %       │   │  *       │  -       │  =       │  \       │  `       │
 &sk LEFT_ALT &sk LEFT_META &sk LEFT_SHIFT &sk LEFT_CONTROL &kp C_BRIGHTNESS_DEC    &kp F11  &kp F4 &kp F5 &kp F6    &trans
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │  &       │  _       │  +       │  │       │          │
+//         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+//         //│          │          │          │          │          │   │  &       │  _       │  +       │  │       │          │
   &kp K_MUTE  &kp C_VOLUME_DOWN &kp LS(LC(C)) &kp C_VOLUME_UP  &kp LS(LC(V))    &kp F10  &kp F1 &kp F2  &kp F3      &trans
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                              &trans    &trans         &kp ENTER    &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-            label = "FUNC";
-        };
+//         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+//                                               &trans    &trans         &kp ENTER    &trans
+//         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+//             >;
+//             label = "FUNC";
+//         };
 
-           NUM {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  [       │  {       │  }       │          │   │  ^       │  (       │  )       │  ]       │  ~       │
-      &trans         &trans          &trans            &trans         &trans          &kp EQUAL  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9      &kp KP_PLUS
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  !       │  @       │  #       │  $       │  %       │   │  *       │  -       │  =       │  \       │  `       │
+//            NUM {
+//             bindings = <
+//         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+//         //│          │  [       │  {       │  }       │          │   │  ^       │  (       │  )       │  ]       │  ~       │
+//       &trans         &trans          &trans            &trans         &trans          &kp EQUAL  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9      &kp KP_PLUS
+//         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+//         //│  !       │  @       │  #       │  $       │  %       │   │  *       │  -       │  =       │  \       │  `       │
 &sk LEFT_ALT  &sk LEFT_META  &sk LEFT_SHIFT  &sk LEFT_CONTROL  &sk RIGHT_ALT    &kp KP_MULTIPLY  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_SUBTRACT
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │  &       │  _       │  +       │  │       │          │
-      &trans     &kp C_MENU         &kp TAB     &kp BACKSPACE   &kp KP_ENTER    &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3    &kp KP_DIVIDE
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-      &trans         &tog NUM                                                                                                            &trans           &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-            label = "NUM";
-        };
+//         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+//         //│          │          │          │          │          │   │  &       │  _       │  +       │  │       │          │
+//       &trans     &kp C_MENU         &kp TAB     &kp BACKSPACE   &kp KP_ENTER    &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3    &kp KP_DIVIDE
+//         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+//       &trans         &tog NUM                                                                                                            &trans           &trans
+//         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+//             >;
+//             label = "NUM";
+//         };
 
-        BLE {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│PROFILE 0 │PROFILE 1 │PROFILE 2 │PROFILE 3 │PROFILE 4 │   │  ^       │  (       │  )       │  ]       │BOOTLOADER│
+//         BLE {
+//             bindings = <
+//         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+//         //│PROFILE 0 │PROFILE 1 │PROFILE 2 │PROFILE 3 │PROFILE 4 │   │  ^       │  (       │  )       │  ]       │BOOTLOADER│
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4        &trans  &trans  &trans  &trans  &bootloader
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  !       │  @       │  #       │  $       │  %       │   │  *       │  -       │  =       │  \       │  `       │
-      &trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans       &trans
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │  &       │  _       │  +       │  │       │   RESET  │
+//         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+//         //│  !       │  @       │  #       │  $       │  %       │   │  *       │  -       │  =       │  \       │  `       │
+//       &trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans       &trans
+//         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+//         //│          │          │          │          │          │   │  &       │  _       │  +       │  │       │   RESET  │
   &bt BT_CLR        &trans        &trans        &trans    &bt BT_PRV    &bt BT_NXT  &trans  &trans  &trans       &sys_reset
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-      &trans        &trans                                                                          &trans       &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-            label = "BLE";
-        };
-    };
+//         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+//       &trans        &trans                                                                          &trans       &trans
+//         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+//             >;
+//             label = "BLE";
+//         };
+     };
 };
