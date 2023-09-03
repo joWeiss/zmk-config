@@ -65,57 +65,59 @@
         keymap {
                 compatible = "zmk,keymap";
 
-            default_layer {
-        bindings = <
-        &kp Q &kp W &kp F &kp P &kp B            &kp J   &kp L  &kp U    &kp Y   &kp QUOT
-        &kp A &kp R &kp S &kp T &kp G            &kp M   &kp N  &kp E    &kp I   &kp O
-        &kp Z &kp X &kp C &kp D &kp V            &kp K   &kp H  &kp CMMA &kp DOT &mt FSLH
+        default_layer {
+            bindings = <
+        &kp Q &kp W &kp F &kp P &kp B            &kp J   &kp L  &kp U     &kp Y   &kp QUOT
+        &kp A &kp R &kp S &kp T &kp G            &kp M   &kp N  &kp E     &kp I   &kp O
+        &kp Z &kp X &kp C &kp D &kp V            &kp K   &kp H  &kp COMMA &kp DOT &kp FSLH
                           &mo 1 &kp LSFT         &kp SPC &mo 2
-        >;
+            >;
         };
 
-            ext_layer {
-        bindings = <
-        &kp ESC    &none       &none      &none     &INSERT          &kp PG_UP &kp HOME  &kp UP   &kp END    &none 
+        ext_layer {
+            bindings = <
+        &kp ESC    &none       &none      &none     &kp INSERT       &kp PG_UP &kp HOME  &kp UP   &kp END    &none 
         &sk LALT   &sk LGUI    &sk LSHFT  &sk LCTRL &sk RALT         &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT  &kp DEL
-        &kp LC(Z)  &kp LC(X)   &kp LC(C)  &kp LGUI  &kp LC(V)        &kp ENTER &kp BSPC  &kp TAB  &K_APP      &kp PRINTSCREEN
+        &kp LC(Z)  &kp LC(X)   &kp LC(C)  &kp LGUI  &kp LC(V)        &kp ENTER &kp BSPC  &kp TAB  &kp K_APP  &kp PRINTSCREEN
                                           &mo 1     &trans           &kp ENTER &mo 2
-        >;
+            >;
+        };
 
-            sym_layer {
-        bindings = <
+        sym_layer {
+            bindings = <
         &kp EXCL  &kp AT   &kp HASH  &kp DLLR  &kp PRCNT          &kp KP_EQUAL &kp GRAVE &kp COLON &kp SEMI  &kp KP_PLUS
         &sk LALT  &sk LGUI &sk LSHFT &sk LCTRL &kp CARET          &kp KPMLT    &kp LPAR  &kp LBRC  &kp LBKT  &kp MINUS
         &none     &none    &kp BSLH  &kp PIPE  &kp AMPS           &kp TILDE    &kp RPAR  &kp RBRC  &kp RBKT  &kp UNDER
                                      &mo 1     &mo 4             &kp SPC      &mo 2
-        >;
+            >;
         };
 
         func_layer {
             bindings = <
-            &none    &none    &none    &none     &none        &kp F12   &kp F7  &kp F8  &kp F9  &none
-            &sk LALT &sk LGUI &sk LSFT &ks LCTL  &none        &kp F11   &kp F4  &kp F5  &kp F6  &none
-            &none    &none    &kp LC(LS(C))  &none &LC(LS(V)) &kp F10   &kp F1  &kp F2  &kp F3  &none
-                                             &mo 1  &trans    &kp ENTER &mo 2            >;
+        &none    &none    &none    &none       &none          &kp F12   &kp F7  &kp F8  &kp F9  &none
+        &sk LALT &sk LGUI &sk LSFT &ks LCTL    &none          &kp F11   &kp F4  &kp F5  &kp F6  &none
+        &none    &none    &kp LC(LS(C))  &none &kp LC(LS(V))  &kp F10   &kp F1  &kp F2  &kp F3  &none
+                                         &mo 1  &trans        &kp ENTER &mo 2
+           >;
         };
 
         num_layer {
             bindings = <
-            &none    &none &none &none &none                     &kp KP_EQUAL &kp KP_7 &kp KP_8 &kp KP_9 &kp KP_PLUS
-            &sk LALT &sk LGUI &sk LSFT &ks LCTL &sk RALT         &kp KPMLT    &kp KP_4 &kp KP_5 &kp KP_6 &kp KP_MINUS
-            &none    &kp K_APP    &kp TAB  &kp BKSP &kp ENTER    &kp KP_0     &kp KP_1 &kp KP_2 &kp KP_3 &kp KP_DIVIDE
-                                           &none    &trans      &none &none
+        &none    &none &none &none &none                     &kp KP_EQUAL &kp KP_7 &kp KP_8 &kp KP_9 &kp KP_PLUS
+        &sk LALT &sk LGUI &sk LSFT &ks LCTL &sk RALT         &kp KPMLT    &kp KP_4 &kp KP_5 &kp KP_6 &kp KP_MINUS
+        &none    &kp K_APP    &kp TAB  &kp BSPC &kp ENTER    &kp KP_0     &kp KP_1 &kp KP_2 &kp KP_3 &kp KP_DIVIDE
+                                       &none    &trans      &none &none
             >;
         };
 
 
         settings_layer {
-        bindings = <
+            bindings = <
         &bootloader  &none  &none  &bt BT_CLR  &bt BT_SEL 0         &bt BT_SEL 3  &bt BT_CLR   &none  &none  &bootloader
         &none        &none  &none  &none       &bt BT_SEL 1         &bt BT_SEL 4  &none        &none  &none  &none
         &sys_reset   &none  &none  &bt BT_PREV &bt BT_SEL 2         &bt BT_SEL 5  &bt BT_NEXT  &none  &none  &sys_reset
                                    &none       &none                &none        &none
-        >;
+            >;
         };
 
     };
