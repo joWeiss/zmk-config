@@ -85,10 +85,10 @@
 
         sym_layer {
             bindings = <
-        &kp EXCL  &kp AT   &kp HASH  &kp DLLR  &kp PRCNT          &kp KP_EQUAL &kp GRAVE &kp COLON &kp SEMI  &kp KP_PLUS
-        &sk LALT  &sk LGUI &sk LSHFT &sk LCTRL &kp CARET          &kp KPMLT    &kp LPAR  &kp LBRC  &kp LBKT  &kp MINUS
-        &none     &none    &kp BSLH  &kp PIPE  &kp AMPS           &kp TILDE    &kp RPAR  &kp RBRC  &kp RBKT  &kp UNDER
-                                     &mo 1     &mo 4             &kp SPC      &mo 2
+        &kp EXCL  &kp AT   &kp HASH  &kp DLLR  &kp PRCNT          &kp KP_EQUAL    &kp GRAVE &kp COLON &kp SEMI  &kp KP_PLUS
+        &sk LALT  &sk LGUI &sk LSHFT &sk LCTRL &kp CARET          &kp KP_MULTIPLY &kp LPAR  &kp LBRC  &kp LBKT  &kp MINUS
+        &none     &none    &kp BSLH  &kp PIPE  &kp AMPS           &kp TILDE       &kp RPAR  &kp RBRC  &kp RBKT  &kp UNDER
+                                     &mo 1     &mo 4             &kp SPC          &mo 2
             >;
         };
 
@@ -103,22 +103,21 @@
 
         num_layer {
             bindings = <
-        &none    &none &none &none &none                     &kp KP_EQUAL &kp KP_7 &kp KP_8 &kp KP_9 &kp KP_PLUS
-        &sk LALT &sk LGUI &sk LSFT &sk LCTL &sk RALT         &kp KPMLT    &kp KP_4 &kp KP_5 &kp KP_6 &kp KP_MINUS
-        &none    &kp K_APP    &kp TAB  &kp BSPC &kp ENTER    &kp KP_0     &kp KP_1 &kp KP_2 &kp KP_3 &kp KP_DIVIDE
-                                       &none    &trans      &none &none
+        &none    &none &none &none &none                     &kp KP_EQUAL    &kp KP_7 &kp KP_8 &kp KP_9 &kp KP_PLUS
+        &sk LALT &sk LGUI &sk LSFT &sk LCTL &sk RALT         &kp KP_MULTIPLY &kp KP_4 &kp KP_5 &kp KP_6 &kp KP_MINUS
+        &none    &kp K_APP    &kp TAB  &kp BSPC &kp ENTER    &kp KP_0        &kp KP_1 &kp KP_2 &kp KP_3 &kp KP_DIVIDE
+                                       &none    &trans        &none &none
             >;
         };
 
 
         settings_layer {
             bindings = <
-        &bootloader  &none  &none  &bt BT_CLR  &bt BT_SEL 0         &bt BT_SEL 3  &bt BT_CLR   &none  &none  &bootloader
-        &none        &none  &none  &none       &bt BT_SEL 1         &bt BT_SEL 4  &none        &none  &none  &none
-        &sys_reset   &none  &none  &bt BT_PREV &bt BT_SEL 2         &bt BT_SEL 5  &bt BT_NEXT  &none  &none  &sys_reset
-                                   &none       &none                &none        &none
+        &bootloader  &none  &none  &bt BT_CLR  &bt BT_SEL 0     &bt BT_SEL 3  &bt BT_CLR   &none  &none  &bootloader
+        &none        &none  &none  &none       &bt BT_SEL 1     &bt BT_SEL 4  &none        &none  &none  &none
+        &sys_reset   &none  &none  &bt BT_PREV &bt BT_SEL 2     &bt BT_SEL 5  &bt BT_NEXT  &none  &none  &sys_reset
+                                   &none       &none            &none        &none
             >;
         };
-
     };
 };
