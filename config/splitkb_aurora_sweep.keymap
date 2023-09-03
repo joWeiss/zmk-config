@@ -17,7 +17,7 @@
 &sk {
     // stay pressed for 2 seconds
     release-after-ms = <2000>;
-}
+};
 
 / {
 
