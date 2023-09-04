@@ -8,6 +8,12 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define DEFAULT 0
+#define EXT 1
+#define SYM 2
+#define FUNC 3
+#define NUM 4
+#define BLE 5
 
 &mt {
   //  flavor = "tap-preferred";
@@ -24,8 +30,8 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         func_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
+            if-layers = <EXT SYM>;
+            then-layer = <FUNC>;
         };
     };
 
@@ -52,13 +58,13 @@
         combo_settings_left {
             timeout-ms = <50>;
             key-positions = <30 31>;
-            bindings = <&mo 5>;
+            bindings = <&mo BLE>;
         };
 
         combo_settings_right {
             timeout-ms = <50>;
             key-positions = <32 33>;
-            bindings = <&mo 5>;
+            bindings = <&mo BLE>;
         };
     };
 
@@ -70,7 +76,7 @@
         &kp Q &kp W &kp F &kp P &kp B            &kp J   &kp L  &kp U     &kp Y   &kp APOS
         &kp A &kp R &kp S &kp T &kp G            &kp M   &kp N  &kp E     &kp I   &kp O
         &kp Z &kp X &kp C &kp D &kp V            &kp K   &kp H  &kp COMMA &kp DOT &kp FSLH
-                          &mo 1 &kp LSFT         &kp SPC &mo 2
+                          &mo EXT &kp LSFT         &kp SPC &mo SYM
             >;
         };
 
@@ -79,7 +85,7 @@
         &kp ESC    &none       &none      &none     &kp INSERT       &kp PG_UP &kp HOME  &kp UP   &kp END    &none 
         &sk LALT   &sk LGUI    &sk LSHFT  &sk LCTRL &sk RALT         &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT  &kp DEL
         &kp LC(Z)  &kp LC(X)   &kp LC(C)  &kp LGUI  &kp LC(V)        &kp ENTER &kp BSPC  &kp TAB  &kp K_APP  &kp PRINTSCREEN
-                                          &mo 1     &trans           &kp ENTER &mo 2
+                                          &mo EXT     &trans           &kp ENTER &mo SYM
             >;
         };
 
@@ -88,7 +94,7 @@
         &kp EXCL  &kp AT   &kp HASH  &kp DLLR  &kp PRCNT          &kp KP_EQUAL    &kp GRAVE &kp COLON &kp SEMI  &kp KP_PLUS
         &sk LALT  &sk LGUI &sk LSHFT &sk LCTRL &kp CARET          &kp KP_MULTIPLY &kp LPAR  &kp LBRC  &kp LBKT  &kp MINUS
         &none     &none    &kp BSLH  &kp PIPE  &kp AMPS           &kp TILDE       &kp RPAR  &kp RBRC  &kp RBKT  &kp UNDER
-                                     &mo 1     &mo 4             &kp SPC          &mo 2
+                                     &mo EXT   &mo NUM            &kp SPC          &mo SYM
             >;
         };
 
@@ -97,15 +103,15 @@
         &none    &none    &none    &none       &none          &kp F12   &kp F7  &kp F8  &kp F9  &none
         &sk LALT &sk LGUI &sk LSFT &sk LCTL    &none          &kp F11   &kp F4  &kp F5  &kp F6  &none
         &none    &none    &kp LC(LS(C))  &none &kp LC(LS(V))  &kp F10   &kp F1  &kp F2  &kp F3  &none
-                                         &mo 1  &trans        &kp ENTER &mo 2
+                                         &mo EXT &trans        &kp ENTER &mo SYM
            >;
         };
 
         num_layer {
             bindings = <
-        &none    &none    &none    &none    &none            &kp KP_EQUAL    &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_PLUS
-        &sk LALT &sk LGUI &sk LSFT &sk LCTL &sk RALT         &kp KP_MULTIPLY &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_MINUS
-        &none    &kp K_APP   &kp TAB  &kp BSPC &kp ENTER    &kp KP_N0        &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_DIVIDE
+        &none    &none    &none    &none    &none            &kp KP_EQUAL    &kp N7 &kp N8 &kp N9 &kp KP_PLUS
+        &sk LALT &sk LGUI &sk LSFT &sk LCTL &sk RALT         &kp KP_MULTIPLY &kp N4 &kp N5 &kp N6 &kp KP_MINUS
+        &none    &kp K_APP   &kp TAB  &kp BSPC &kp ENTER     &kp N0          &kp N1 &kp N2 &kp N3 &kp KP_DIVIDE
                                        &none    &trans        &none &none
             >;
         };
