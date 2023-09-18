@@ -86,18 +86,24 @@
 
         default_layer {
             bindings = <
-        &kp Q &kp W &kp F &kp P &kp B            &kp J   &kp L  &kp U     &kp Y   &kp APOS
-        &kp A &kp R &kp S &kp T &kp G            &kp M   &kp N  &kp E     &kp I   &kp O
-        &kp Z &kp X &kp C &kp D &kp V            &kp K   &kp H  &kp COMMA &kp DOT &kp FSLH
-                          &mo EXT &kp LSFT         &kp SPC &mo SYM
+        &kp Q &kp D &kp R &kp W &kp B          &kp J &kp F &kp U     &kp P   &kp APOS
+        &kp A &kp S &kp H &kp T &kp G          &kp Y &kp N &kp E     &kp O   &kp I
+        &kp Z &kp X &kp M &kp C &kp V          &kp K &kp L &kp COMMA &kp DOT &kp FSLH
+                        &mo EXT &kp LSFT     &kp SPC &mo SYM
             >;
+    //       bindings = <
+    //   &kp Q &kp W &kp F &kp P &kp B            &kp J   &kp L  &kp U     &kp Y   &kp APOS
+    //   &kp A &kp R &kp S &kp T &kp G            &kp M   &kp N  &kp E     &kp I   &kp O
+    //   &kp Z &kp X &kp C &kp D &kp V            &kp K   &kp H  &kp COMMA &kp DOT &kp FSLH
+    //                     &mo EXT &kp LSFT         &kp SPC &mo SYM
+    //       >;
         };
 
         ext_layer {
             bindings = <
         &kp ESC    &none       &none      &none     &kp INSERT       &kp PG_UP &kp HOME  &kp UP   &kp END    &none 
         &sk LALT   &sk LGUI    &sk LSHFT  &sk LCTRL &sk RALT         &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT  &kp DEL
-        &kp LC(Z)  &kp LC(X)   &kp LC(C)  &kp LGUI  &kp LC(V)        &kp ENTER &kp BSPC  &kp TAB  &kp K_APP  &kp PRINTSCREEN
+        &kp LC(Z)  &kp LC(X)   &kp LGUI   &kp LC(C) &kp LC(V)        &kp ENTER &kp BSPC  &kp TAB  &kp K_APP  &kp PRINTSCREEN
                                           &mo EXT     &trans           &kp ENTER &mo SYM
             >;
         };
