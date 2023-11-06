@@ -89,13 +89,13 @@
         &kp Q &kp D &kp R &kp W &kp B          &kp J &kp F &kp U     &kp P   &kp APOS
         &kp A &kp S &kp H &kp T &kp G          &kp Y &kp N &kp E     &kp O   &kp I
         &kp Z &kp X &kp M &kp C &kp V          &kp K &kp L &kp COMMA &kp DOT &kp FSLH
-                        &mo EXT &kp LSFT     &kp SPC &mo SYM
+                        &mo EXT &kp LSFT       &lt NUM SPC &mo SYM
             >;
     //       bindings = <
     //   &kp Q &kp W &kp F &kp P &kp B            &kp J   &kp L  &kp U     &kp Y   &kp APOS
     //   &kp A &kp R &kp S &kp T &kp G            &kp M   &kp N  &kp E     &kp I   &kp O
     //   &kp Z &kp X &kp C &kp D &kp V            &kp K   &kp H  &kp COMMA &kp DOT &kp FSLH
-    //                     &mo EXT &kp LSFT         &kp SPC &mo SYM
+    //                     &mo EXT &kp LSFT       &lt NUM SPC &mo SYM
     //       >;
         };
 
