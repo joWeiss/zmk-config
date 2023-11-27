@@ -40,7 +40,7 @@
         compatible = "zmk,combos";
         combo_esc {
             timeout-ms = <50>;
-            key-positions = <12 13>;
+            key-positions = <22 23>;
             bindings = <&kp ESC>;
         };
 
@@ -97,7 +97,7 @@
             bindings = <
         &kp ESC    &none       &none      &none     &kp INSERT       &kp PG_UP &kp HOME  &kp UP   &kp END    &none 
         &sk LALT   &sk LGUI    &sk LSHFT  &sk LCTRL &sk RALT         &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT  &kp DEL
-        &kp LC(Z)  &kp LC(X)   &kp LGUI   &kp LC(C) &kp LC(V)        &kp ENTER &kp BSPC  &kp TAB  &kp K_APP  &kp PRINTSCREEN
+        &kp LC(Z)  &kp LC(X)   &kp LGUI   &kp LC(C) &kp LC(V)        &kp ESC   &kp BSPC  &kp TAB  &kp K_APP  &kp PRINTSCREEN
                                           &mo EXT     &trans           &kp ENTER &mo SYM
             >;
         };
@@ -122,10 +122,10 @@
 
         num_layer {
             bindings = <
-        &none    &none    &none    &none    &none            &kp KP_EQUAL    &kp N7 &kp N8 &kp N9 &kp KP_PLUS
-        &sk LALT &sk LGUI &sk LSFT &sk LCTL &sk RALT         &kp KP_MULTIPLY &kp N4 &kp N5 &kp N6 &kp KP_MINUS
-        &none    &kp K_APP   &kp TAB  &kp BSPC &kp ENTER     &kp N0          &kp N1 &kp N2 &kp N3 &kp KP_DIVIDE
-                                       &none    &trans        &none &none
+        &none    &none       &none    &none    &kp COLON        &kp KP_EQUAL    &kp N7 &kp N8 &kp N9 &kp KP_PLUS
+        &sk LALT &sk LGUI    &sk LSFT &sk LCTL &sk RALT         &kp KP_MULTIPLY &kp N4 &kp N5 &kp N6 &kp KP_MINUS
+        &none    &kp K_APP   &kp TAB  &kp BSPC &kp ENTER        &kp N0          &kp N1 &kp N2 &kp N3 &kp KP_DIVIDE
+                                       &none    &trans          &none &none
             >;
         };
 
