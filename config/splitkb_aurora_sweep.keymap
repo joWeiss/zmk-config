@@ -40,7 +40,7 @@
         compatible = "zmk,combos";
         combo_esc {
             timeout-ms = <50>;
-            key-positions = <0 1>;
+            key-positions = <12 13>;
             bindings = <&kp ESC>;
         };
 
@@ -53,7 +53,7 @@
         combo_ralt {
             timeout-ms = <50>;
             key-positions = <7 8>;
-            bindings = <&kp RALT>;
+            bindings = <&sk RALT>;
         };
 
         combo_num_layer_left {
@@ -91,12 +91,6 @@
         &kp Z &kp X &kp M &kp C &kp V          &kp K &kp L &kp COMMA &kp DOT &kp FSLH
                         &mo EXT &kp LSFT       &lt NUM SPC &mo SYM
             >;
-    //       bindings = <
-    //   &kp Q &kp W &kp F &kp P &kp B            &kp J   &kp L  &kp U     &kp Y   &kp APOS
-    //   &kp A &kp R &kp S &kp T &kp G            &kp M   &kp N  &kp E     &kp I   &kp O
-    //   &kp Z &kp X &kp C &kp D &kp V            &kp K   &kp H  &kp COMMA &kp DOT &kp FSLH
-    //                     &mo EXT &kp LSFT       &lt NUM SPC &mo SYM
-    //       >;
         };
 
         ext_layer {
